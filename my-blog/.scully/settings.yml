@@ -1,0 +1,11 @@
+identifier: lfd1m1sctcfdqc14
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: my-blog
+homeFolder: C:\Users\nah\Desktop\Angular\my-blog
+distFolder: dist/my-blog
+outDir: C:\Users\nah\Desktop\Angular\my-blog\dist\static
+handle404: ''
+allowErrorCollect: false
