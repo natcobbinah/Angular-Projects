@@ -6,6 +6,8 @@ The purpose of this application followed in [Angular Projects- Second Edition by
 > structuring application into manageable modules following standard best practices,
 > enhance project with JamStack characteristics using Scully Site generator
 
+project demo link: https://youtu.be/tL2Pjcnk_l8
+
 ## Run application
 > npx scully serve
 > select "http://localhost:1668/"
