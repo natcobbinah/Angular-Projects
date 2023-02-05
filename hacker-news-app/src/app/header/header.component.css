@@ -1,0 +1,24 @@
+nav{
+    background-color: #f72a0f;
+}
+
+.navbar-brand{
+    color: #fff;
+}
+
+.container-fluid{
+    justify-content: space-around;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+}
+
+form input{
+    border: 0.5rem;
+    border-color: #fff;
+    border-radius: 2px;
+    width: 50rem;
+    padding: 15px;
+}

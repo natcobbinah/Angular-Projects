@@ -1,0 +1,25 @@
+<ng-container *ngIf="newsfeed">
+    <table class="table table-success table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Url</th>
+                <th scope="col">Author</th>
+                <th scope="col">Created_At</th>
+                <th scope="col">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let news of newsfeed?.hits">
+                <td><a href={{news.url}} target="_blank">Link</a></td>
+                <td>{{news.title}}</td>
+                <td>{{news.author}}</td>
+                <td>{{news.created_at}}</td>
+                <td>{{news.points}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            {{newsfeed.nbPages}} pages
+        </tfoot>
+    </table>
+</ng-container>

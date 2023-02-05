@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand">HackerNewsApp</a>
+        <form role="search" [formGroup]="newsSearchForm" (ngSubmit)="fetchNews()" >
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                formControlName="searchTerm">
+            <button class="btn btn-secondary" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<app-newsfeedlist [newsfeed]="newsfeed">
+</app-newsfeedlist>
