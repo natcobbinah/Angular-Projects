@@ -13,9 +13,9 @@ export class HeaderComponent {
 
   newsfeed: NewsFeed | undefined;
   newsfeedItem: NewsfeedItem | undefined;
-  newsSearchForm!: FormGroup ;
+  newsSearchForm!: FormGroup;
   id?: number;
-  searchQuery?:string;
+  searchQuery?: string;
 
   constructor(private newsfeedService: NewsFeedService,
     private builder: FormBuilder) {
@@ -30,25 +30,31 @@ export class HeaderComponent {
     })
 
     //default table populated
-    this.newsfeedService.searchNews('hello')()()().subscribe(news => {
+    this.newsfeedService.searchNews('front_page')()()().subscribe(news => {
       this.newsfeed = news;
     })
+
+    //autosearch 
+    this.newsSearchForm?.controls['searchTerm'].valueChanges.subscribe((searchTerm: string) => {
+      this.newsfeedService.searchNews(searchTerm)()()().subscribe(news => {
+        this.newsfeed = news;
+      })
+    })
+
   }
 
-  fetchNews(){
-    if(Number(this.newsSearchForm?.controls['searchTerm'].value)){
+  fetchNews() {
+    if (Number(this.newsSearchForm?.controls['searchTerm'].value)) {
       this.id = this.newsSearchForm?.controls['searchTerm'].value;
       this.newsfeedService.getItem(this.id).subscribe(news => {
         this.newsfeedItem = news
-        console.log(this.newsfeed)
       })
-    }else if(this.newsSearchForm?.controls['searchTerm'].value){
+    } else if (this.newsSearchForm?.controls['searchTerm'].value) {
       this.searchQuery = this.newsSearchForm?.controls['searchTerm'].value;
       this.newsfeedService.searchNews(this.searchQuery)()()().subscribe(news => {
         this.newsfeed = news;
-        console.log(news)
       })
-    }else{
+    } else {
       console.log("Search term does not fall into any category")
     }
   }

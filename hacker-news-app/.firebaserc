@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "farmapp-dc503": {
+      "hosting": {
+        "hacker-news-app": [
+          "farmapp-dc503"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "farmapp-dc503"
+  }
+}
